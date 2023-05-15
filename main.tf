@@ -32,7 +32,7 @@ resource "azurerm_resource_group" "tests" {
   }
 }
 resource "azurerm_virtual_network" "VNets" {
-  name                = "VNetss"
+  name                = "VNets"
   address_space       = ["192.168.0.0/22"]
   location            = azurerm_resource_group.tests.location
   resource_group_name = azurerm_resource_group.tests.name
@@ -41,7 +41,7 @@ resource "azurerm_virtual_network" "VNets" {
 resource "azurerm_subnet" "Subnet-DB" {
   name                 ="Subnet-DB"
   resource_group_name  = azurerm_resource_group.tests.name
-  virtual_network_name = azurerm_virtual_network.VNetss.name
+  virtual_network_name = azurerm_virtual_network.VNets.name
   address_prefixes     =  ["192.168.0.64/28"]
 }
 resource "azurerm_network_interface" "nick" {
