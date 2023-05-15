@@ -34,8 +34,8 @@ resource "azurerm_resource_group" "tests" {
 resource "azurerm_virtual_network" "VNets" {
   name                = "VNetss"
   address_space       = ["192.168.0.0/22"]
-  location            = azurerm_resource_group.test.location
-  resource_group_name = azurerm_resource_group.test.name
+  location            = azurerm_resource_group.tests.location
+  resource_group_name = azurerm_resource_group.tests.name
 }
 
 resource "azurerm_subnet" "Subnet-DB" {
